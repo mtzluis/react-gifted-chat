@@ -10,7 +10,7 @@ var PropTypes = _interopDefault(require('prop-types'));
 var moment = _interopDefault(require('moment'));
 var React = require('react');
 var React__default = _interopDefault(React);
-var ReactNative = require('react-native-web');
+var ReactNative = require('react-native');
 var ReactNative__default = _interopDefault(ReactNative);
 
 function _defineProperty(obj, key, value) {
@@ -955,7 +955,7 @@ function (_React$Component) {
         style: [styles$4[this.props.position].container, this.props.containerStyle[this.props.position]]
       }, React__default.createElement(ParsedText, {
         style: [styles$4[this.props.position].text, this.props.textStyle[this.props.position], this.props.customTextStyle],
-        parse: _toConsumableArray(this.props.parsePatterns(linkStyle)).concat([{
+        parse: [].concat(_toConsumableArray(this.props.parsePatterns(linkStyle)), [{
           type: 'url',
           style: linkStyle,
           onPress: this.onUrlPress
@@ -2209,7 +2209,9 @@ function (_Component) {
 
       return React__default.createElement("div", {
         style: styles$g.container
-      }, ListHeaderComponent(), messages.map(this.renderItem), ListFooterComponent());
+      }, React__default.createElement("div", {
+        style: styles$g.innerContainer
+      }, ListHeaderComponent(), messages.map(this.renderItem), ListFooterComponent()));
     }
   }]);
 
@@ -2221,10 +2223,15 @@ var styles$g = {
     minHeight: '100%',
     width: '100%',
     overflow: 'auto',
+    transform: 'rotateX(180deg)'
+  },
+  innerContainer: {
+    width: '100%',
     display: 'flex',
     flexDirection: 'column-reverse',
     flex: 1,
-    alignItems: 'stretch'
+    alignItems: 'stretch',
+    transform: 'rotateX(180deg)'
   }
 };
 WebScrollView.defaultProps = {
@@ -2677,7 +2684,7 @@ function (_React$Component) {
         return _objectSpread({}, message, {
           user: _this3.props.user,
           createdAt: new Date(),
-          id: _this3.props.messageIdGenerator()
+          _id: _this3.props.messageIdGenerator()
         });
       });
 
