@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as RN from 'react-native';
+import * as RN from 'react-native-web';
 
 type ViewStyle = RN.StyleProp<RN.ViewStyle>;
 type TextStyle = RN.StyleProp<RN.TextStyle>;

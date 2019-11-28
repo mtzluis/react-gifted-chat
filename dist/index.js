@@ -10,7 +10,7 @@ var PropTypes = _interopDefault(require('prop-types'));
 var moment = _interopDefault(require('moment'));
 var React = require('react');
 var React__default = _interopDefault(React);
-var ReactNative = require('react-native');
+var ReactNative = require('react-native-web');
 var ReactNative__default = _interopDefault(ReactNative);
 
 function _defineProperty(obj, key, value) {
